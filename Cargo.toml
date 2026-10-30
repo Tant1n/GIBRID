@@ -1,0 +1,48 @@
+[workspace]
+resolver = "2"
+members = [
+    "crates/gibrid-core",
+    "crates/gibrid-world",
+    "crates/gibrid-storage",
+    "crates/gibrid-assets",
+    "crates/gibrid-mesh",
+    "crates/gibrid-gameplay",
+    "crates/gibrid-mesh",
+    "crates/gibrid-network",
+    "crates/gibrid-java-bridge",
+    "crates/gibrid-worldgen",
+    "crates/gibrid-renderer-wgpu",
+    "crates/gibrid-app",
+    "crates/gibrid-testkit",
+]
+
+[workspace.package]
+version = "0.0.1"
+edition = "2021"
+publish = false
+license = "UNLICENSED"
+repository = "https://local/gibrid"
+
+[workspace.dependencies]
+gibrid-assets = { path = "crates/gibrid-assets" }
+gibrid-core = { path = "crates/gibrid-core" }
+gibrid-mesh = { path = "crates/gibrid-mesh" }
+gibrid-gameplay = { path = "crates/gibrid-gameplay" }
+gibrid-renderer-wgpu = { path = "crates/gibrid-renderer-wgpu" }
+gibrid-storage = { path = "crates/gibrid-storage" }
+gibrid-testkit = { path = "crates/gibrid-testkit" }
+gibrid-world = { path = "crates/gibrid-world" }
+serde = { version = "1.0.228", features = ["derive"] }
+serde_json = "1.0.119"
+thiserror = "2.0.17"
+toml = "0.9.8"
+tracing = "0.1.41"
+tracing-subscriber = { version = "0.3.20", features = ["env-filter", "fmt"] }
+flate2 = { version = "1.0.42", default-features = false, features = ["zlib"] }
+winit = { version = "0.30", features = ["rwh_06"] }
+wgpu = { version = "0.19", features = [] }
+pollster = "1"
+bytemuck = "1.12"
+bytemuck_derive = "1.9"
+glam = "0.24"
+criterion = "0.5"

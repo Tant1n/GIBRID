@@ -1,0 +1,17 @@
+[package]
+name = "gibrid-gameplay"
+version.workspace = true
+edition.workspace = true
+publish.workspace = true
+license.workspace = true
+
+[dependencies]
+gibrid-core.workspace = true
+gibrid-world.workspace = true
+gibrid-storage.workspace = true
+gibrid-mesh.workspace = true
+glam.workspace = true
+winit.workspace = true
+
+[dev-dependencies]
+criterion = "0.5"

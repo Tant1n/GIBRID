@@ -1,0 +1,17 @@
+game_version = "26.3"
+protocol_version = 777
+protocol_verified = true
+data_version = 5023
+source = "Minecraft Java Edition 26.3 (folder 26.3-0.20.1), extracted from X:\Modrinth App\meta\versions\26.3-0.20.1\26.3-0.20.1.jar (version.json + SharedConstants.class)"
+verified_on = "2026-10-30"
+confidence = "verified"
+dependent_modules = [
+  "gibrid-protocol",
+  "gibrid-network",
+  "gibrid-storage",
+  "gibrid-world",
+  "gibrid-assets",
+  "gibrid-renderer-wgpu",
+  "gibrid-testkit",
+]
+fixture_ids = []

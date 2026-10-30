@@ -1,0 +1,19 @@
+/target/
+**/*.rs.bk
+*.pdb
+
+# Local game data and secrets — never commit
+game-data/
+reference/
+saves/
+*.jar
+*.mca
+tokens
+.env
+.env.*
+credentials.json
+
+# OS
+Thumbs.db
+Desktop.ini
+.DS_Store
