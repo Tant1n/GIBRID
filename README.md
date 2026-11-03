@@ -1,4 +1,7 @@
-# GIBRID Native
+﻿# NOT AN OFFICIAL MINECRAFT PRODUCT. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT.
+
+
+# (Это неофициальный продукт Minecraft, не одобрен Mojang или Microsoft и не связан с ними.# GIBRID Native
 
 Unofficial native Rust client targeting **Minecraft Java Edition 26.3**. Not affiliated with Mojang or Microsoft.
 
@@ -28,3 +31,4 @@ cargo run -p gibrid-app
 See [docs/status.md](docs/status.md). Vocabulary: SPECIFIED, SCAFFOLDED, IMPLEMENTED, TESTED, COMPATIBLE, BENCHMARKED.
 
 A stub is not implemented. A unit test is not parity.
+
