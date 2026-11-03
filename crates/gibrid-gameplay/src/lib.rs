@@ -1,11 +1,14 @@
-//! GIBRID Gameplay — минимальный игровой цикл (Phase 5).
+﻿// NOT AN OFFICIAL MINECRAFT PRODUCT. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT.
+
+// (Это неофициальный продукт Minecraft, не одобрен Mojang или Microsoft и не связан с nimi.//! GIBRID Gameplay — минимальный игровой цикл (Phase 5).
 //!
 //! Включает: игрока, ввод (клавиатура/мышь), движение с коллизиями,
 //! луч для ломания/установки блоков, связь с очередью мешинга.
-//! Статус: IMPLEMENTED (базовый функционал без текстутур и звука).
+//! Статус: IMPLEMENTED (базовый функционал без текстур и звука).
 
 #![forbid(unsafe_code)]
 
+pub mod crafting;
 pub mod input;
 pub mod inventory;
 pub mod movement;
@@ -13,17 +16,19 @@ pub mod block_interaction;
 pub mod mobs;
 
 use gibrid_core::ResourceId;
-use gibrid_mesh::{MeshJob, MeshQueue, MeshRevision};
+use gibrid_mesh::{FaceTextureMap, MeshJob, MeshQueue, MeshRevision, TextureMap};
 use std::collections::HashMap;
+use std::sync::Arc;
 
-/// Состояние игрока: позиция, углы, скорость.
-#[derive(Debug, Clone, Copy)]
+/// Состояние игрока: позиция, углы, скорость, инвентарь.
+#[derive(Debug, Clone)]
 pub struct Player {
     pub position: glam::Vec3,
     pub yaw: f32,   // вращение вокруг Y (влево/вправо)
     pub pitch: f32, // вращение вокруг X (вверх/вниз)
     pub velocity: glam::Vec3,
     pub on_ground: bool,
+    pub inventory: inventory::Inventory,
 }
 
 impl Player {
@@ -34,6 +39,9 @@ impl Player {
             pitch: 0.0,
             velocity: glam::Vec3::ZERO,
             on_ground: false,
+            inventory: inventory::Inventory::new(
+                inventory::ContainerDefinition::player_inventory(),
+            ),
         }
     }
 
@@ -86,6 +94,13 @@ pub struct WorldContext {
     pub chunks: HashMap<(i32, i32, i32), ChunkData>,
     pub mesh_queue: MeshQueue,
     pub next_revision: MeshRevision,
+    /// Карта текстур: индекс в атласе для каждого блока.
+    pub texture_map: Arc<TextureMap>,
+    /// Карта текстур по граням: (блок, грань) -> индекс в атласе.
+    pub face_texture_map: Arc<FaceTextureMap>,
+    pub atlas_width: u32,
+    pub atlas_height: u32,
+    pub tile_size: u32,
 }
 
 /// Данные чанка (упрощённые: палитра + packed данные).
@@ -96,11 +111,23 @@ pub struct ChunkData {
 }
 
 impl WorldContext {
-    pub fn new(mesh_queue: MeshQueue) -> Self {
+    pub fn new(
+        mesh_queue: MeshQueue,
+        texture_map: Arc<TextureMap>,
+        face_texture_map: Arc<FaceTextureMap>,
+        atlas_width: u32,
+        atlas_height: u32,
+        tile_size: u32,
+    ) -> Self {
         Self {
             chunks: HashMap::new(),
             mesh_queue,
             next_revision: MeshRevision(1),
+            texture_map,
+            face_texture_map,
+            atlas_width,
+            atlas_height,
+            tile_size,
         }
     }
 
@@ -189,6 +216,11 @@ impl WorldContext {
             palette: chunk_data.palette.clone(),
             packed_data: chunk_data.packed_data.clone(),
             bits_per_block: chunk_data.bits_per_block,
+            texture_map: self.texture_map.clone(),
+            face_texture_map: self.face_texture_map.clone(),
+            atlas_width: self.atlas_width,
+            atlas_height: self.atlas_height,
+            tile_size: self.tile_size,
         };
 
         let _ = self.mesh_queue.submit(job);

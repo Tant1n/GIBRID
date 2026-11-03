@@ -1,4 +1,7 @@
-//! NBT and Anvil region (.mca) codecs with allocation limits.
+﻿// NOT AN OFFICIAL MINECRAFT PRODUCT. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT.
+
+
+// (Это неофициальный продукт Minecraft, не одобрен Mojang или Microsoft и не связан с ними.//! NBT and Anvil region (.mca) codecs with allocation limits.
 //! Chunk sections and block-state palettes (gzip/zlib compressed payloads).
 
 #![forbid(unsafe_code)]
@@ -15,3 +18,4 @@ pub use region::{
     encode_chunk_payload, index_for_chunk, read_chunk, write_chunk_to_region,
     write_region_file_atomic, Compression, RegionError, RegionHeader, RawChunk, SectorLocation,
 };
+

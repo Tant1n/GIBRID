@@ -1,3 +1,6 @@
+﻿# NOT AN OFFICIAL MINECRAFT PRODUCT. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT.
+# (Это неофициальный продукт Minecraft, не одобрен Mojang или Microsoft и не связан с nimi.
+
 [package]
 name = "gibrid-assets"
 version.workspace = true
@@ -7,6 +10,9 @@ license.workspace = true
 
 [dependencies]
 gibrid-core.workspace = true
+serde = { version = "1", features = ["derive"] }
 thiserror.workspace = true
-serde.workspace = true
 serde_json.workspace = true
+walkdir = "2"
+tracing = "0.1"
+image = "0.25"

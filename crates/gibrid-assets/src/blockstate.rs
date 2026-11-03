@@ -1,4 +1,7 @@
-//! Парсинг blockstates JSON (сопоставление состояний блоков с моделями).
+﻿// NOT AN OFFICIAL MINECRAFT PRODUCT. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT.
+
+
+// (Это неофициальный продукт Minecraft, не одобрен Mojang или Microsoft и не связан с ними.//! Парсинг blockstates JSON (сопоставление состояний блоков с моделями).
 //!
 //! Формат blockstates (Minecraft):
 //! {
@@ -105,3 +108,4 @@ mod tests {
         }
     }
 }
+

@@ -1,4 +1,7 @@
-//! Test helpers. Missing fixtures must be SKIPPED, never reported as PASS.
+﻿// NOT AN OFFICIAL MINECRAFT PRODUCT. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT.
+
+
+// (Это неофициальный продукт Minecraft, не одобрен Mojang или Microsoft и не связан с ними.//! Test helpers. Missing fixtures must be SKIPPED, never reported as PASS.
 
 #![forbid(unsafe_code)]
 
@@ -31,3 +34,4 @@ mod tests {
         assert!(!path.exists());
     }
 }
+

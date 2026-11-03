@@ -1,4 +1,7 @@
-//! Очередь мешинга с ограниченным размером и worker потоком.
+﻿// NOT AN OFFICIAL MINECRAFT PRODUCT. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT.
+
+
+// (Это неофициальный продукт Minecraft, не одобрен Mojang или Microsoft и не связан с ними.//! Очередь мешинга с ограниченным размером и worker потоком.
 //! Реализует bounded backpressure: если входная очередь полна,
 //! submit() возвращает ошибку вместо неограниченного роста памяти.
 
@@ -99,6 +102,12 @@ impl MeshQueue {
                 bits_per_block: job.bits_per_block,
                 is_full_cube: &|_| true,
                 get_block: &|_, _, _| None,
+                texture_map: &job.texture_map,
+                face_texture_map: &job.face_texture_map,
+                atlas_width: job.atlas_width,
+                atlas_height: job.atlas_height,
+                tile_size: job.tile_size,
+                get_brightness: &|_, _, _| 15, // Яркость по умолчанию (максимальная)
             });
 
             let result = MeshResult {
@@ -230,3 +239,4 @@ mod tests {
         }
     }
 }
+

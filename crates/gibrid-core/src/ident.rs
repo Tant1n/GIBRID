@@ -1,3 +1,7 @@
+﻿// NOT AN OFFICIAL MINECRAFT PRODUCT. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT.
+
+
+// (Это неофициальный продукт Minecraft, не одобрен Mojang или Microsoft и не связан с ними.
 use std::fmt;
 use std::str::FromStr;
 
@@ -119,3 +123,4 @@ mod tests {
         assert!("a:b:c".parse::<ResourceId>().is_err());
     }
 }
+

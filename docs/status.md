@@ -1,4 +1,7 @@
-# Subsystem status
+﻿# NOT AN OFFICIAL MINECRAFT PRODUCT. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT.
+
+
+# (Это неофициальный продукт Minecraft, не одобрен Mojang или Microsoft и не связан с ними.# Subsystem status
 
 Updated: 2026-10-30. Labels are not marketing claims.
 

@@ -1,4 +1,7 @@
-//! Инвентарь — хранение предметов в слотах.
+﻿// NOT AN OFFICIAL MINECRAFT PRODUCT. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT.
+
+
+// (Это неофициальный продукт Minecraft, не одобрен Mojang или Microsoft и не связан с ними.//! Инвентарь — хранение предметов в слотах.
 //! Поддерживает игроков, сундуки, шкафчики и другие контейнеры.
 
 use gibrid_core::ResourceId;
@@ -291,3 +294,4 @@ mod tests {
         assert_eq!(furnace.slot_count, 3);
     }
 }
+

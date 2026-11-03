@@ -1,3 +1,6 @@
+﻿# NOT AN OFFICIAL MINECRAFT PRODUCT. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT.
+# (Это неофициальный продукт Minecraft, не одобрен Mojang или Microsoft и не связан с nimi.
+
 [package]
 name = "gibrid-mesh"
 version.workspace = true
@@ -7,11 +10,6 @@ license.workspace = true
 
 [dependencies]
 gibrid-core.workspace = true
-gibrid-world.workspace = true
-gibrid-storage.workspace = true
-bytemuck.workspace = true
-bytemuck_derive.workspace = true
 thiserror.workspace = true
-
-[dev-dependencies]
-criterion = "0.5"
+bytemuck = "1"
+bytemuck_derive = "1"

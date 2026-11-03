@@ -1,3 +1,7 @@
+﻿// NOT AN OFFICIAL MINECRAFT PRODUCT. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT.
+
+
+// (Это неофициальный продукт Minecraft, не одобрен Mojang или Microsoft и не связан с ними.
 use std::io::{Read, Write};
 
 use flate2::read::GzDecoder;
@@ -469,3 +473,4 @@ mod tests {
         ));
     }
 }
+

@@ -1,4 +1,7 @@
-/// Process lifecycle. Transitions are explicit; game systems must not skip shutdown.
+﻿// NOT AN OFFICIAL MINECRAFT PRODUCT. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT.
+
+
+// (Это неофициальный продукт Minecraft, не одобрен Mojang или Microsoft и не связан с ними./// Process lifecycle. Transitions are explicit; game systems must not skip shutdown.
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
 pub enum Lifecycle {
     Created,
@@ -62,3 +65,4 @@ mod tests {
         assert!(Lifecycle::Created.transition(Lifecycle::Running).is_err());
     }
 }
+

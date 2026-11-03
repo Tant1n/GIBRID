@@ -1,4 +1,7 @@
-//! Minecraft-style integer coordinate conversions.
+﻿// NOT AN OFFICIAL MINECRAFT PRODUCT. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT.
+
+
+// (Это неофициальный продукт Minecraft, не одобрен Mojang или Microsoft и не связан с ними.//! Minecraft-style integer coordinate conversions.
 //!
 //! Division uses Euclidean rounding so negative coordinates stay consistent
 //! with chunk/section/region grids. See GIBRID_DEV_GUIDE_CORE_EXAMPLES.
@@ -72,3 +75,4 @@ mod tests {
         assert_eq!(chunk_to_local_in_region(-33), 31);
     }
 }
+

@@ -1,4 +1,7 @@
-use criterion::{black_box, criterion_group, criterion_main, Criterion};
+﻿// NOT AN OFFICIAL MINECRAFT PRODUCT. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT.
+
+
+// (Это неофициальный продукт Minecraft, не одобрен Mojang или Microsoft и не связан с ними.use criterion::{black_box, criterion_group, criterion_main, Criterion};
 use gibrid_mesh::{build_section_mesh, SectionMeshInput};
 use gibrid_core::ResourceId;
 
@@ -66,3 +69,4 @@ fn mesh_full_chunk(c: &mut Criterion) {
 
 criterion_group!(mesh_benches, mesh_single_block, mesh_full_chunk);
 criterion_main!(mesh_benches);
+

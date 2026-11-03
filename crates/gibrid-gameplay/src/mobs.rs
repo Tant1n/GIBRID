@@ -1,4 +1,7 @@
-//! GIBRID Gameplay - Entities & Physics Systems
+﻿// NOT AN OFFICIAL MINECRAFT PRODUCT. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT.
+
+
+// (Это неофициальный продукт Minecraft, не одобрен Mojang или Microsoft и не связан с ними.//! GIBRID Gameplay - Entities & Physics Systems
 //! Phase 9: Full Minecraft Native - Entity simulation, physics, AI
 //! Status: IMPLEMENTED
 

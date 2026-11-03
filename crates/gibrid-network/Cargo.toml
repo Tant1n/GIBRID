@@ -1,3 +1,6 @@
+﻿# NOT AN OFFICIAL MINECRAFT PRODUCT. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT.
+# (Это неофициальный продукт Minecraft, не одобрен Mojang или Microsoft и не связан с nimi.
+
 [package]
 name = "gibrid-network"
 version.workspace = true
@@ -9,3 +12,11 @@ license.workspace = true
 gibrid-core.workspace = true
 thiserror.workspace = true
 byteorder = "1.4"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+reqwest = { version = "0.12", default-features = false, features = ["blocking", "json"] }
+aes = "0.9"
+cipher = "0.5"
+base64 = "0.22"
+getrandom = "0.3"
+urlencoding = "2.1"

@@ -1,4 +1,7 @@
-//! GIBRID Network - Protocol Packet Definitions
+﻿// NOT AN OFFICIAL MINECRAFT PRODUCT. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT.
+
+
+// (Это неофициальный продукт Minecraft, не одобрен Mojang или Microsoft и не связан с ними.//! GIBRID Network - Protocol Packet Definitions
 //! Minecraft Java Edition 26.3 protocol packets
 
 use byteorder::{BigEndian, ReadBytesExt, WriteBytesExt};

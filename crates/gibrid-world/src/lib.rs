@@ -1,4 +1,7 @@
-//! Block, chunk, and dimension coordinates. No simulation yet.
+﻿// NOT AN OFFICIAL MINECRAFT PRODUCT. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT.
+
+
+// (Это неофициальный продукт Minecraft, не одобрен Mojang или Microsoft и не связан с ними.//! Block, chunk, and dimension coordinates. No simulation yet.
 
 #![forbid(unsafe_code)]
 
@@ -121,3 +124,4 @@ mod tests {
         assert_eq!(ChunkPos::new(-1, -1).index_in_region(), 1023);
     }
 }
+

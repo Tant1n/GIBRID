@@ -1,4 +1,7 @@
-use criterion::{black_box, criterion_group, criterion_main, Criterion};
+﻿// NOT AN OFFICIAL MINECRAFT PRODUCT. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT.
+
+
+// (Это неофициальный продукт Minecraft, не одобрен Mojang или Microsoft и не связан с ними.use criterion::{black_box, criterion_group, criterion_main, Criterion};
 use gibrid_core::{block_to_chunk, block_to_local, chunk_to_region};
 
 fn block_to_chunk_bench(c: &mut Criterion) {
@@ -30,3 +33,4 @@ fn chunk_to_region_bench(c: &mut Criterion) {
 
 criterion_group!(coords_benches, block_to_chunk_bench, block_to_local_bench, chunk_to_region_bench);
 criterion_main!(coords_benches);
+

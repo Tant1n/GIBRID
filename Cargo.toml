@@ -1,3 +1,42 @@
+﻿# NOT AN OFFICIAL MINECRAFT PRODUCT. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT.
+# (Это неофициальный продукт Minecraft, не одобрен Mojang или Microsoft и не связан с ними.
+
+[workspace.package]
+edition = "2021"
+version = "0.0.1"
+license = "UNLICENSED"
+publish = false
+
+[workspace.dependencies]
+thiserror = "2.0"
+byteorder = "1.4"
+glam = "0.24"
+bytemuck = "1"
+bytemuck_derive = "1"
+wgpu = "0.19"
+winit = "0.30"
+pollster = "0.3"
+serde = { version = "1", features = ["derive"] }
+rand = "0.8"
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter", "fmt"] }
+toml = "0.9"
+flate2 = "1"
+serde_json = "1"
+
+gibrid-core = { path = "crates/gibrid-core" }
+gibrid-world = { path = "crates/gibrid-world" }
+gibrid-storage = { path = "crates/gibrid-storage" }
+gibrid-assets = { path = "crates/gibrid-assets" }
+gibrid-mesh = { path = "crates/gibrid-mesh" }
+gibrid-gameplay = { path = "crates/gibrid-gameplay" }
+gibrid-network = { path = "crates/gibrid-network" }
+gibrid-java-bridge = { path = "crates/gibrid-java-bridge" }
+gibrid-renderer-wgpu = { path = "crates/gibrid-renderer-wgpu" }
+gibrid-app = { path = "crates/gibrid-app" }
+gibrid-testkit = { path = "crates/gibrid-testkit" }
+gibrid-worldgen = { path = "crates/gibrid-worldgen" }
+
 [workspace]
 resolver = "2"
 members = [
@@ -15,34 +54,3 @@ members = [
     "crates/gibrid-app",
     "crates/gibrid-testkit",
 ]
-
-[workspace.package]
-version = "0.0.1"
-edition = "2021"
-publish = false
-license = "UNLICENSED"
-repository = "https://local/gibrid"
-
-[workspace.dependencies]
-gibrid-assets = { path = "crates/gibrid-assets" }
-gibrid-core = { path = "crates/gibrid-core" }
-gibrid-mesh = { path = "crates/gibrid-mesh" }
-gibrid-gameplay = { path = "crates/gibrid-gameplay" }
-gibrid-renderer-wgpu = { path = "crates/gibrid-renderer-wgpu" }
-gibrid-storage = { path = "crates/gibrid-storage" }
-gibrid-testkit = { path = "crates/gibrid-testkit" }
-gibrid-world = { path = "crates/gibrid-world" }
-serde = { version = "1.0.228", features = ["derive"] }
-serde_json = "1.0.119"
-thiserror = "2.0.17"
-toml = "0.9.8"
-tracing = "0.1.41"
-tracing-subscriber = { version = "0.3.20", features = ["env-filter", "fmt"] }
-flate2 = { version = "1.0.42", default-features = false, features = ["zlib"] }
-winit = { version = "0.30", features = ["rwh_06"] }
-wgpu = { version = "0.19", features = [] }
-pollster = "1"
-bytemuck = "1.12"
-bytemuck_derive = "1.9"
-glam = "0.24"
-criterion = "0.5"

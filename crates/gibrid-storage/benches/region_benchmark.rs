@@ -1,4 +1,7 @@
-use criterion::{black_box, criterion_group, criterion_main, Criterion};
+﻿// NOT AN OFFICIAL MINECRAFT PRODUCT. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT.
+
+
+// (Это неофициальный продукт Minecraft, не одобрен Mojang или Microsoft и не связан с ними.use criterion::{black_box, criterion_group, criterion_main, Criterion};
 use gibrid_storage::region::{read_chunk, RegionHeader};
 use gibrid_storage::nbt::{parse_root, Limits};
 
@@ -54,3 +57,4 @@ fn nbt_parse(c: &mut Criterion) {
 
 criterion_group!(region_benches, region_header_parse, chunk_read, nbt_parse);
 criterion_main!(region_benches);
+

@@ -1,4 +1,7 @@
-//! Состояния соединения протокола Minecraft.
+﻿// NOT AN OFFICIAL MINECRAFT PRODUCT. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT.
+
+
+// (Это неофициальный продукт Minecraft, не одобрен Mojang или Microsoft и не связан с ними.//! Состояния соединения протокола Minecraft.
 
 /// Состояния соединения Minecraft протокола.
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Default)]
@@ -45,3 +48,4 @@ impl Default for Protocol {
         }
     }
 }
+

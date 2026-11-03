@@ -1,3 +1,6 @@
+﻿# NOT AN OFFICIAL MINECRAFT PRODUCT. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT.
+# (Это неофициальный продукт Minecraft, не одобрен Mojang или Microsoft и не связан с nimi.
+
 [package]
 name = "gibrid-app"
 version.workspace = true
@@ -5,16 +8,16 @@ edition.workspace = true
 publish.workspace = true
 license.workspace = true
 
-[[bin]]
-name = "gibrid"
-path = "src/main.rs"
-
 [dependencies]
 gibrid-core.workspace = true
 gibrid-mesh.workspace = true
-gibrid-renderer-wgpu.workspace = true
 gibrid-gameplay.workspace = true
-tracing.workspace = true
-tracing-subscriber.workspace = true
-winit.workspace = true
+gibrid-renderer-wgpu.workspace = true
+gibrid-assets.workspace = true
+gibrid-storage.workspace = true
 wgpu.workspace = true
+winit.workspace = true
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter", "fmt"] }
+clap = { version = "4", features = ["derive"] }
+glam.workspace = true

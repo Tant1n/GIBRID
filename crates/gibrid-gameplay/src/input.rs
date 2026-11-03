@@ -1,4 +1,7 @@
-//! Обработка ввода: клавиатура (WASD, пробел, Shift) и мышь (поворот камеры).
+﻿// NOT AN OFFICIAL MINECRAFT PRODUCT. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT.
+
+
+// (Это неофициальный продукт Minecraft, не одобрен Mojang или Microsoft и не связан с ними.//! Обработка ввода: клавиатура (WASD, пробел, Shift) и мышь (поворот камеры).
 
 use winit::event::{ElementState, KeyEvent, MouseButton, WindowEvent};
 use winit::keyboard::{KeyCode, PhysicalKey};
@@ -119,3 +122,4 @@ impl InputHandler {
         move_vec
     }
 }
+

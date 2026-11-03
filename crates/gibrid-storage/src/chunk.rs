@@ -1,4 +1,7 @@
-//! Чанковые секции: палитры block states, packed индексы.
+﻿// NOT AN OFFICIAL MINECRAFT PRODUCT. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT.
+
+
+// (Это неофициальный продукт Minecraft, не одобрен Mojang или Microsoft и не связан с ними.//! Чанковые секции: палитры block states, packed индексы.
 //! Формат Anvil (MCA): чанк — это NBT с корнем "Level", содержащий список "Sections".
 
 use std::collections::HashMap;
@@ -400,3 +403,4 @@ mod tests {
         assert_eq!(section.bits_per_block, 4);
     }
 }
+

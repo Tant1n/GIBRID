@@ -1,4 +1,7 @@
-//! VarInt/VarLong codecs for Minecraft protocol
+﻿// NOT AN OFFICIAL MINECRAFT PRODUCT. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT.
+
+
+// (Это неофициальный продукт Minecraft, не одобрен Mojang или Microsoft и не связан с ними.//! VarInt/VarLong codecs for Minecraft protocol
 
 use byteorder::{ReadBytesExt, WriteBytesExt};
 use std::io::{Read, Write};
@@ -133,3 +136,4 @@ mod tests {
         assert_eq!(s.value(), d.value());
     }
 }
+

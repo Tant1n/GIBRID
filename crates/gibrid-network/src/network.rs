@@ -1,4 +1,7 @@
-//! GIBRID Network - Connection implementation
+﻿// NOT AN OFFICIAL MINECRAFT PRODUCT. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT.
+
+
+// (Это неофициальный продукт Minecraft, не одобрен Mojang или Microsoft и не связан с ними.//! GIBRID Network - Connection implementation
 //! Handles handshake, status, login, configuration, and play states
 
 use crate::codec::VarInt;
@@ -135,3 +138,4 @@ mod tests {
         assert_eq!(ConnectionState::Play as u8, 4);
     }
 }
+

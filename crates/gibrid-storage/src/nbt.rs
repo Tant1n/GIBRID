@@ -1,3 +1,7 @@
+﻿// NOT AN OFFICIAL MINECRAFT PRODUCT. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT.
+
+
+// (Это неофициальный продукт Minecraft, не одобрен Mojang или Microsoft и не связан с ними.
 use thiserror::Error;
 
 const TAG_END: u8 = 0;
@@ -589,3 +593,4 @@ mod tests {
         assert!(result.is_err());
     }
 }
+

@@ -1,4 +1,7 @@
-//! Описание предметов.
+﻿// NOT AN OFFICIAL MINECRAFT PRODUCT. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT.
+
+
+// (Это неофициальный продукт Minecraft, не одобрен Mojang или Microsoft и не связан с ними.//! Описание предметов.
 //! Предметы — это то, что игрок может держать в инвентаре, крафтить,
 // использовать, носить в экипировке.
 
@@ -335,3 +338,4 @@ mod tests {
         assert!(!components.hide_attributes);
     }
 }
+

@@ -1,4 +1,7 @@
-//! GIBRID World Generation - Phase 9
+﻿// NOT AN OFFICIAL MINECRAFT PRODUCT. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT.
+
+
+// (Это неофициальный продукт Minecraft, не одобрен Mojang или Microsoft и не связан с ними.//! GIBRID World Generation - Phase 9
 //! Procedural terrain generation with hash-based noise
 //! Status: IMPLEMENTED - Basic chunk generation with hash-based heightmaps
 

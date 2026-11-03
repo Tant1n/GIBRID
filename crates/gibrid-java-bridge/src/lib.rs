@@ -1,4 +1,7 @@
-//! GIBRID Java Mod Bridge — опциональная подсистема совместимости с Java-модами.
+﻿// NOT AN OFFICIAL MINECRAFT PRODUCT. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT.
+
+
+// (Это неофициальный продукт Minecraft, не одобрен Mojang или Microsoft и не связан с ними.//! GIBRID Java Mod Bridge — опциональная подсистема совместимости с Java-модами.
 //!
 //! Статус: SPECIFIED (архитектура описана, реализация отложена на Phase 7/8).
 //!
@@ -129,3 +132,4 @@ mod tests {
         assert!(!bridge.is_mod_supported("unknown_mod"));
     }
 }
+

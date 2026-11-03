@@ -1,4 +1,7 @@
-use criterion::{black_box, criterion_group, criterion_main, Criterion};
+﻿// NOT AN OFFICIAL MINECRAFT PRODUCT. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT.
+
+
+// (Это неофициальный продукт Minecraft, не одобрен Mojang или Microsoft и не связан с ними.use criterion::{black_box, criterion_group, criterion_main, Criterion};
 use gibrid_storage::nbt::{parse_root, Limits};
 
 fn nbt_parse_small(c: &mut Criterion) {
@@ -73,3 +76,4 @@ fn nbt_parse_large_array(c: &mut Criterion) {
 
 criterion_group!(nbt_benches, nbt_parse_small, nbt_parse_nested, nbt_parse_large_array);
 criterion_main!(nbt_benches);
+

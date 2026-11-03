@@ -1,4 +1,7 @@
-//! GIBRID Network - Native Rust Minecraft Java Edition 26.3 Network Protocol
+﻿// NOT AN OFFICIAL MINECRAFT PRODUCT. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT.
+
+
+// (Это неофициальный продукт Minecraft, не одобрен Mojang или Microsoft и не связан с ними.//! GIBRID Network - Native Rust Minecraft Java Edition 26.3 Network Protocol
 //!
 //! Implements the Minecraft Java Edition network protocol:
 //! - Handshake (state 0)
@@ -11,14 +14,18 @@
 
 #![forbid(unsafe_code)]
 
+pub mod auth;
 pub mod codec;
 pub mod connection;
+pub mod encrypted;
 pub mod network;
 pub mod packet;
 pub mod protocol;
 
+pub use auth::{AuthResult, MinecraftAuthClient};
 pub use codec::{VarInt, VarLong};
 pub use connection::Connection;
+pub use encrypted::{EncryptedStream, EncryptionKeys};
 pub use network::Connection as NetworkConnection;
 pub use packet::*;
 pub use packet::PacketEncodeDecode;

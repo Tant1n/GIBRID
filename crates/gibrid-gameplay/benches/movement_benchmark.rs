@@ -1,4 +1,7 @@
-use criterion::{black_box, criterion_group, criterion_main, Criterion};
+﻿// NOT AN OFFICIAL MINECRAFT PRODUCT. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT.
+
+
+// (Это неофициальный продукт Minecraft, не одобрен Mojang или Microsoft и не связан с ними.use criterion::{black_box, criterion_group, criterion_main, Criterion};
 use gibrid_core::ResourceId;
 use gibrid_gameplay::{
     input::InputHandler,
@@ -31,3 +34,4 @@ fn player_movement_bench(c: &mut Criterion) {
 
 criterion_group!(movement_benches, player_movement_bench);
 criterion_main!(movement_benches);
+

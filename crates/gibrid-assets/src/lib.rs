@@ -1,14 +1,20 @@
-//! Resource-pack path safety, discovery, precedence and cache invalidation.
+﻿// NOT AN OFFICIAL MINECRAFT PRODUCT. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT.
+
+
+// (Это неофициальный продукт Minecraft, не одобрен Mojang или Microsoft и не связан с ними.//! Resource-pack path safety, discovery, precedence and cache invalidation.
 //! Parsing of blockstates and block models.
 //! Does not load Minecraft assets.
 
 #![forbid(unsafe_code)]
 
+pub mod asset_index;
 pub mod block_definition;
+pub mod block_model;
 pub mod blockstate;
 pub mod item_definition;
 pub mod model;
 pub mod sound_system;
+pub mod texture;
 
 use std::path::{Component, Path, PathBuf};
 use std::time::{SystemTime, UNIX_EPOCH};
@@ -182,6 +188,74 @@ pub fn discover_packs(dir: &Path) -> Result<Vec<ResourcePack>, AssetError> {
     Ok(packs)
 }
 
+/// Авто-подкачка ассетов из установленного Minecraft для тестов gibrid.
+/// Копирует `assets/` и `resourcepacks/` из `.minecraft` в `<cwd>/gibrid_assets/`.
+/// Это временное решение для разработки — в релизе ресурсы должны поставляться отдельно.
+pub fn fetch_from_minecraft(minecraft_dir: &Path) -> Result<(), AssetError> {
+    let target_dir = std::env::current_dir()
+        .map_err(|e| AssetError::PackDir(e.to_string()))?
+        .join("gibrid_assets");
+
+    let source_assets = minecraft_dir.join("assets");
+    let source_packs = minecraft_dir.join("resourcepacks");
+
+    if source_assets.is_dir() {
+        let target_assets = target_dir.join("assets");
+        tracing::info!(
+            source = %source_assets.display(),
+            target = %target_assets.display(),
+            "копируем ассеты из minecraft"
+        );
+        copy_dir_recursive(&source_assets, &target_assets)?;
+    } else {
+        tracing::warn!(
+            source = %source_assets.display(),
+            mc_dir = %minecraft_dir.display(),
+            "папка assets не найдена в minecraft"
+        );
+    }
+
+    if source_packs.is_dir() {
+        let target_packs = target_dir.join("resourcepacks");
+        tracing::info!(
+            source = %source_packs.display(),
+            target = %target_packs.display(),
+            "копируем resourcepacks из minecraft"
+        );
+        copy_dir_recursive(&source_packs, &target_packs)?;
+    }
+
+    println!(
+        "Ассеты скопированы в {}. Теперь gibrid может использовать текстуры и модели из основного майна.",
+        target_dir.display()
+    );
+    Ok(())
+}
+
+/// Рекурсивное копирование директории.
+fn copy_dir_recursive(src: &Path, dst: &Path) -> Result<(), AssetError> {
+    if !src.is_dir() {
+        return Err(AssetError::PackDir(format!("источник не является директорией: {}", src.display())));
+    }
+    std::fs::create_dir_all(dst).map_err(|e| AssetError::PackDir(e.to_string()))?;
+
+    for entry in walkdir::WalkDir::new(src) {
+        let entry = entry.map_err(|e| AssetError::PackDir(e.to_string()))?;
+        let rel = entry.path().strip_prefix(src).map_err(|e| AssetError::PackDir(e.to_string()))?;
+        let target = dst.join(rel);
+
+        if entry.file_type().is_dir() {
+            std::fs::create_dir_all(&target).map_err(|e| AssetError::PackDir(e.to_string()))?;
+        } else {
+            if let Some(parent) = target.parent() {
+                std::fs::create_dir_all(parent).map_err(|e| AssetError::PackDir(e.to_string()))?;
+            }
+            std::fs::copy(entry.path(), &target).map_err(|e| AssetError::PackDir(e.to_string()))?;
+        }
+    }
+    Ok(())
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -285,3 +359,4 @@ mod tests {
         assert_eq!(invalidated, vec!["changed".to_string()]);
     }
 }
+

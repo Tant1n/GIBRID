@@ -1,3 +1,6 @@
+﻿# NOT AN OFFICIAL MINECRAFT PRODUCT. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT.
+# (Это неофициальный продукт Minecraft, не одобрен Mojang или Microsoft и не связан с nimi.
+
 [package]
 name = "gibrid-renderer-wgpu"
 version.workspace = true
@@ -6,9 +9,12 @@ publish.workspace = true
 license.workspace = true
 
 [dependencies]
-wgpu.workspace = true
-winit.workspace = true
-bytemuck.workspace = true
-bytemuck_derive.workspace = true
-pollster.workspace = true
+gibrid-core.workspace = true
 gibrid-mesh.workspace = true
+wgpu = "0.19"
+winit = "0.30"
+pollster = "0.3"
+bytemuck = { version = "1", features = ["derive"] }
+bytemuck_derive = "1"
+thiserror.workspace = true
+glam = "0.30"

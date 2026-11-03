@@ -1,4 +1,7 @@
-# ADR-0001…0005 — Phase 0 working baseline
+﻿# NOT AN OFFICIAL MINECRAFT PRODUCT. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT.
+
+
+# (Это неофициальный продукт Minecraft, не одобрен Mojang или Microsoft и не связан с ними.# ADR-0001…0005 — Phase 0 working baseline
 
 Status: ACCEPTED as implementation baseline when this repository was created (2026-10-29), taken from `GIBRID_DECISION_LOG_ADR.md` (previously PROPOSED).
 
@@ -9,3 +12,4 @@ Status: ACCEPTED as implementation baseline when this repository was created (20
 - **0005** Main thread: window/input later. Simulation thread: 20 tps / 50 ms with catch-up cap. Worker pool later. Bounded queues. No async runtime in core. Renderer reads immutable snapshots only.
 
 ADR-0008 (project license) remains OPEN; repository is private/`UNLICENSED`.
+

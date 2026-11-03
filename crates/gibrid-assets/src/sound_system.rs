@@ -1,4 +1,7 @@
-//! Звуковая система GIBRID.
+﻿// NOT AN OFFICIAL MINECRAFT PRODUCT. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT.
+
+
+// (Это неофициальный продукт Minecraft, не одобрен Mojang или Microsoft и не связан с ними.//! Звуковая система GIBRID.
 //! Управление звуками игры, музыкой, окружающими звуками и звуками сущностей.
 
 use gibrid_core::ResourceId;
@@ -221,3 +224,4 @@ mod tests {
         assert!(registry.get(&ResourceId::minecraft("player_hurt").unwrap()).is_some());
     }
 }
+

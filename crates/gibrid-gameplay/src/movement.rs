@@ -1,4 +1,7 @@
-//! Движение игрока с коллизиями против блоков.
+﻿// NOT AN OFFICIAL MINECRAFT PRODUCT. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT.
+
+
+// (Это неофициальный продукт Minecraft, не одобрен Mojang или Microsoft и не связан с ними.//! Движение игрока с коллизиями против блоков.
 //! Реализует простую физику: ускорение, трение, гравитацию, прыжок, столкновение с AABB блоков.
 
 use crate::input::InputHandler;
@@ -136,3 +139,4 @@ fn collides_with_world(player: &Player, world: &crate::WorldContext) -> bool {
     }
     false
 }
+

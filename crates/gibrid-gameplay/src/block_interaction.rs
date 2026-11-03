@@ -1,4 +1,7 @@
-//! Взаимодействие с блоками: raycasting, ломание и установка блоков.
+﻿// NOT AN OFFICIAL MINECRAFT PRODUCT. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT.
+
+
+// (Это неофициальный продукт Minecraft, не одобрен Mojang или Microsoft и не связан с ними.//! Взаимодействие с блоками: raycasting, ломание и установка блоков.
 //! Реализует простой DDA (цифровой дифференциальный анализатор) для прохода по чанкам.
 
 use crate::Player;
@@ -102,3 +105,4 @@ pub fn place_block(world: &mut WorldContext, hit: &BlockHit, block: ResourceId) 
     let z = (hit.position.z + hit.normal.z).round() as i32;
     world.set_block(x, y, z, Some(block));
 }
+

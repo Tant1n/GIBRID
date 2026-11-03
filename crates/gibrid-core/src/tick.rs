@@ -1,3 +1,7 @@
+﻿// NOT AN OFFICIAL MINECRAFT PRODUCT. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT.
+
+
+// (Это неофициальный продукт Minecraft, не одобрен Mojang или Microsoft и не связан с ними.
 use std::time::Duration;
 
 /// Publicly documented vanilla tick rate. Confirm with fixtures before using for parity.
@@ -65,3 +69,4 @@ mod tests {
         assert_eq!(clock.pending, Duration::ZERO);
     }
 }
+

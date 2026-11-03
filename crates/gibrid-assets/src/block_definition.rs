@@ -1,4 +1,7 @@
-//! Описание блока и его состояний.
+﻿// NOT AN OFFICIAL MINECRAFT PRODUCT. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT.
+
+
+// (Это неофициальный продукт Minecraft, не одобрен Mojang или Microsoft и не связан с ними.//! Описание блока и его состояний.
 //! Каждый блок имеет идентификатор, имя, набор состояний (block states) и ссылку на модель.
 //! Это основа для полноценного переноса всех блоков Minecraft 26.3.
 
@@ -386,3 +389,4 @@ mod tests {
         assert!(registry.get(&ResourceId::minecraft("poppy").unwrap()).is_some());
     }
 }
+

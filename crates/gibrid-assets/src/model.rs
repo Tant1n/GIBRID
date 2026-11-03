@@ -1,4 +1,7 @@
-//! Парсинг block model JSON с наследованием (parent).
+﻿// NOT AN OFFICIAL MINECRAFT PRODUCT. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT.
+
+
+// (Это неофициальный продукт Minecraft, не одобрен Mojang или Microsoft и не связан с ними.//! Парсинг block model JSON с наследованием (parent).
 //!
 //! Формат модели (Minecraft):
 //! {
@@ -107,3 +110,4 @@ mod tests {
         assert_eq!(resolve_texture(&child, &models, "nonexistent"), None);
     }
 }
+
